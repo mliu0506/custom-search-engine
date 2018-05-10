@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Micgle Search</title>
+
+  <!-- Bootstrap Core min  CSS -->
+  <!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet type="text/css" href="assets/css/style.css" ">
+
+  <!-- Custom Fonts -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+<!-- Main Header  -->
+<div class="jumbotron mainHeader">
+    
+        <div class="container center">
+            <img alt="Micgle" class="hplogo" src="assets/images/google_custom.png" >
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <form id="gif-form" role="form" >
+                   
+                    <div class="form-group">
+                        <input class="col-4" type="text" id="action-input">
+                    </div>
+                    <input id="searchGif" type="submit" value="Search" class="btn btn-primary btnmain">
+
+                </form>    
+            </div>
+            
+
+        </div>
+    </div>
+
+    <!-- Header  -->
+ 
+    <div class="container left rpheader">
+            <div class="row col-lg-12">
+                <form id="gif-form" role="form">
+                    <div class="form-group">
+                        <img alt="Micgle" class="rplogo" src="assets/images/result_page_logo.png" />
+                        <input id="rp-action-input" type="text">
+                        <input id="addGif" type="submit" value="Add Keyword" class="btn btn-primary">
+                        <input id="removeGif" type="submit" value="Clear" class="btn btn-primary">
+                    </div>
+                    
+                </form>    
+            </div>
+    </div>
+    
+    <!-- Buttons  -->
+    <hr>
+    <div class="btnView">
+            <div class="row col-12">
+                <div id="gifButtonsView"></div>
+            </div>
+    </div>
+    <!-- Search Result Tab -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#google-content" role="tab" aria-controls="googletab" aria-selected="true">GOOGLE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#image-content" role="tab" aria-controls="imagetab" aria-selected="false">IMAGE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#giphy-content" role="tab" aria-controls="gifphytab" aria-selected="false">GIPHY</a>
+            </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="google-content" role="tabpanel" aria-labelledby="google-tab">...</div>
+            <div class="tab-pane fade" id="image-content" role="tabpanel" aria-labelledby="image-tab">...</div>
+            <div class="tab-pane fade" id="giphy-content" role="tabpanel" aria-labelledby="giphy-tab">...</div>
+    </div>
+    
+    
+    <!---    
+    <div id="resultTab" class="container">
+    <h3 class="text-center">Search Result</h3>  
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">GOOGLE</a></li>
+      <li><a data-toggle="tab" href="#menu1">IMAGE</a></li>
+      <li><a data-toggle="tab" href="#menu2">GIFPHY</a></li>
+    </ul>
+
+    <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <h2>Mike Ross, Manager</h2>
+              <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+              <h2>Chandler Bing, Guitarist</h2>
+              <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <h2>Peter Griffin, Bass player</h2>
+              <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+            </div>
+    </div>
+</div>
+--> 
+<!-- Main Container  -->   
+<!--     
+    
+    <div class="container left">
+        <div class="row col-12">
+            <div id="gifsView"></div>
+        </div>
+-->
+        
+        
+        <!-- Action Submission Form  -->
+<!--        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <form id="gif-form" role="form">
+                <h2><legend>Action Submission</legend></h2>
+                <div class="form-group">
+                    <label for="action-input">Add your action below</label>
+                    <input type="text" id="action-input">
+                </div>
+                <input id="addGif" type="submit" value="Add Keyword" class="btn btn-primary">
+                <input id="removeGif" type="submit" value="Remove Keyword" class="btn btn-primary">
+            </form>    
+        </div>
+    </div>
+-->
+    <footer>
+        <div id="footer" class="container center">
+            <h4 id="copyright">&copy; Copyright 2018 Michael Liu</h4>
+        </div>
+    </footer>
+   <!-- Bootstrap core JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>  
+ 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  
+
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
