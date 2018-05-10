@@ -2,7 +2,9 @@
 // An array of actions, new actions will be pushed into this array;
 //var actions = ["Dancing", "Jogging", "Falling", "Reading", "Pushing", "Swimming", "Eating", "Skipping", "Crying", "Winking","Beyoncing", "Strolling", "Hopping"];
 // Creating Functions & Methods
-
+var maxCookie = 10;
+var actions = [];
+var cookieCount;
 
 //Save the keyword in local cookie
 function setCookie(cname,cvalue,exdays) {
@@ -43,9 +45,7 @@ function deleteAllCookies() {
     }
 }
 
-var maxCookie = 10;
-var actions = [];
-var cookieCount;
+
 
 function loadCookie() {
     cookieCount= getCookie("keycount");
@@ -83,14 +83,15 @@ function displayGifButtons(){
 function addNewButton(){
     $("#searchGif").on("click", function(){
         var action = $("#action-input").val().trim();
+        
         if (action == ""){
           return false; // added so user cannot add a blank button
         }
+        console.log(action);
         actions.push(action);
         setCookie("keycount", cookieCount, 30);
         setCookie("keyword"+cookieCount, action, 30);
         cookieCount++;
-        console.log(action);
         displayGifButtons();
         displayResult();
        
@@ -118,11 +119,11 @@ function addNewButton(){
     // rather than just the last
 function removeLastButton(){
     $("#removeGif").on("click", function(){
-    actions.pop(action);
-    list.remove(action);
+    //actions.pop(action);
+    //list.remove(action);
     deleteAllCookies();
     displayGifButtons();
-    return false;
+    //return false;
     });
 }
 // Function that displays all of the gifs
