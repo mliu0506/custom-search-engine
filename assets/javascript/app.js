@@ -92,7 +92,7 @@ function addNewButton(){
           return false; // added so user cannot add a blank button
         }
         console.log(action); 
-        actions.push(action);
+        //actions.push(action);
         setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
         cookieCount++;
@@ -109,7 +109,7 @@ function addNewButton(){
       return false; // added so user cannot add a blank button
     }
     console.log(action);
-    actions.push(action);
+    //actions.push(action);
     setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
     cookieCount++;
