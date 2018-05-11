@@ -93,7 +93,7 @@ function addhpNewButton(){
           return false; // added so user cannot add a blank button
         }
         console.log(action); 
-        actions.push(action);
+        //actions.push(action);
         cookieCount= getCookie("keycount");
         cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
@@ -115,7 +115,7 @@ function addrpNewButton(){
       return false; // added so user cannot add a blank button
     }
     console.log(action);
-    actions.push(action);
+    //actions.push(action);
     cookieCount= getCookie("keycount");
     cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
