@@ -59,8 +59,8 @@ function loadCookie() {
         actions = []; //reset the array
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
-            var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
-            if   (action != "" && actions != null) {
+            var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + action + "'>" + i + "</button>"); 
+            if   (action != "" && action != null) {
                 actions.push(action);
                 //actions[i] =getCookie("keyword"+i);
                 console.log("Array load i:" + i);
