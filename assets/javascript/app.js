@@ -49,18 +49,21 @@ function deleteAllCookies() {
 
 function loadCookie() {
     cookieCount= getCookie("keycount");
-    actions[cookieCount] =getCookie("keyword"+cookieCount);
-    if (cookieCount =="") {
+    //actions[cookieCount] =getCookie("keyword"+cookieCount);
+    // For the first time, if cookieCount is null
+    if (cookieCount =="" || cookieCount == null) {
         cookieCount = 0;
+    } else {
+    //Load the Array from the cookie 
+        for (var i=0; i <= cookieCount; i++){
+            if   (actions[cookieCount] != "" && actions[cookieCount] != null) {
+                // do {     
+                actions[i] =getCookie("keyword"+i);
+                //    i++;
+                //} while (i <= cookieCount);
+            } 
+        } 
     }
-    //Load the Array from the cookie until empty
-   if (actions[cookieCount] != "" && actions[cookieCount] != null) {
-   i=0;
-         do {     
-            actions[i] =getCookie("keyword"+i);
-            i++;
-        } while (i <= cookieCount);
-    }  
 }
 
 
@@ -68,7 +71,7 @@ function loadCookie() {
 // Function that displays all gif buttons
 function displayGifButtons(){
     $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
-    //checkCookie() ;      
+    //load the cookie into action array     
     loadCookie();
     for (var i = 0; i < actions.length; i++){
         var gifButton = $("<button>");
@@ -76,20 +79,21 @@ function displayGifButtons(){
         gifButton.addClass("btn btn-primary")
         gifButton.attr("data-name", actions[i]);
         gifButton.text(actions[i]);
-        $("#gifButtonsView").append(gifButton);
+        $("#gifButtonsView").prepend(gifButton);
     }
 }
 // Function to add a new action button
 function addNewButton(){
+    // when click on Home page search button
     $("#searchGif").on("click", function(){
         var action = $("#action-input").val().trim();
         
         if (action == ""){
           return false; // added so user cannot add a blank button
         }
-        console.log(action);
+        console.log(action); 
         actions.push(action);
-        setCookie("keycount", cookieCount, 30);
+        setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
         cookieCount++;
         displayGifButtons();
@@ -98,17 +102,17 @@ function addNewButton(){
         return false;
         });
     
-    
+    //When click on Result page add button
     $("#addGif").on("click", function(){
     var action = $("#rp-action-input").val().trim();
     if (action == ""){
       return false; // added so user cannot add a blank button
     }
+    console.log(action);
     actions.push(action);
-    setCookie("keycount", cookieCount, 30);
+    setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
     cookieCount++;
-    console.log(action);
     displayGifButtons();
  
     return false;
@@ -123,7 +127,7 @@ function removeLastButton(){
     //list.remove(action);
     deleteAllCookies();
     displayGifButtons();
-    //return false;
+    return false;
     });
 }
 // Function that displays all of the gifs
