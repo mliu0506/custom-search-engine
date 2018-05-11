@@ -49,7 +49,7 @@ function deleteAllCookies() {
 
 function loadCookie() {
     cookieCount= getCookie("keycount");
-    console.log("count: " + cookiecount);
+    console.log("count: " + cookieCount);
     //actions[cookieCount] =getCookie("keyword"+cookieCount);
     // For the first time, if cookieCount is null
     if (cookieCount =="" || cookieCount == null) {
@@ -100,7 +100,7 @@ function addNewButton(){
         cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
-        alert("count: " +cookieCount + " word: " + action); 
+        console.log("count: " +cookieCount + " word: " + action); 
         displayGifButtons();
         displayResult();
        
@@ -119,7 +119,7 @@ function addNewButton(){
     cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
-    alert("count: " +cookieCount + " word: " + action); 
+    console.log("count: " +cookieCount + " word: " + action); 
     displayGifButtons();
  
     return false;
