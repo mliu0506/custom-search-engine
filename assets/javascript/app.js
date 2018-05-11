@@ -255,8 +255,8 @@ function displayResult(){
 // Calling Functions & Methods
 loadMain();
 displayGifButtons(); // displays list of actions already created
-addNewButton();
-removeLastButton();
+//addNewButton();
+//removeLastButton();
 // Document Event Listeners
 $(document).on("click", ".action",function() {
     var action = $(this).attr("data-name");
