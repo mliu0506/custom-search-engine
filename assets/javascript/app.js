@@ -73,7 +73,8 @@ function loadCookie() {
 // Function that displays all gif buttons
 function displayGifButtons(){
     $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
-    //load the cookie into action array     
+    //load the cookie into action array   
+    console.log("display button")  
     loadCookie();
     for (var i = 0; i < actions.length; i++){
         var gifButton = $("<button>");
@@ -94,12 +95,12 @@ function addNewButton(){
           return false; // added so user cannot add a blank button
         }
         console.log(action); 
-        //actions.push(action);
+        actions.push(action);
         cookieCount= getCookie("keycount");
         cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
-        console.log("count: " +cookieCount + " word: " + action); 
+        alert("count: " +cookieCount + " word: " + action); 
         displayGifButtons();
         displayResult();
        
@@ -113,12 +114,12 @@ function addNewButton(){
       return false; // added so user cannot add a blank button
     }
     console.log(action);
-    //actions.push(action);
+    actions.push(action);
     cookieCount= getCookie("keycount");
     cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
-    console.log("count: " +cookieCount + " word: " + action); 
+    alert("count: " +cookieCount + " word: " + action); 
     displayGifButtons();
  
     return false;
