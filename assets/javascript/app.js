@@ -59,13 +59,13 @@ function loadCookie() {
         actions = []; //reset the array
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
-            var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + action + "'>" + i + "</button>"); 
+            var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + action + "'>" + action + "</button>"); 
             if   (action != "" && action != null) {
                 actions.push(action);
                 //actions[i] =getCookie("keyword"+i);
                 console.log("Array load i:" + i);
                 $("#gifButtonsView").prepend(gifbutton);
-                console.log("print button : " + i);
+                console.log("print button : " + action);
 
             } 
         } 
