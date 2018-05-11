@@ -3,7 +3,7 @@
 //var actions = ["Dancing", "Jogging", "Falling", "Reading", "Pushing", "Swimming", "Eating", "Skipping", "Crying", "Winking","Beyoncing", "Strolling", "Hopping"];
 // Creating Functions & Methods
 var maxCookie = 10;
-var actions = [];
+var actions = new Array();
 var cookieCount;
 
 //Save the keyword in local cookie
