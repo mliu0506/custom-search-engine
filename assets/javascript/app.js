@@ -50,15 +50,15 @@ function deleteAllCookies() {
 function loadCookie() {
     cookieCount= getCookie("keycount");
     console.log("count: " + cookieCount);
-    //actions[cookieCount] =getCookie("keyword"+cookieCount);
+    //var actions = getCookie("keyword"+cookieCount);
     // For the first time, if cookieCount is null
     if (cookieCount =="" || cookieCount == null) {
         cookieCount = 0;
     } else {
     //Load the Array from the cookie 
         for (var i=1; i < cookieCount +1; i++){
-            if   (actions[i] != "" && actions[i] != null) {
-                var action = getCookie("keyword"+i);
+            var action = getCookie("keyword"+i);
+            if   (action != "" && actions != null) {
                 actions.push(action);
                 //actions[i] =getCookie("keyword"+i);
                 console.log("Array load i:" + i);
