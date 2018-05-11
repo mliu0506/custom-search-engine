@@ -1,4 +1,4 @@
-//$( document ).ready(function() {
+
 // An array of actions, new actions will be pushed into this array;
 //var actions = ["Dancing", "Jogging", "Falling", "Reading", "Pushing", "Swimming", "Eating", "Skipping", "Crying", "Winking","Beyoncing", "Strolling", "Hopping"];
 // Creating Functions & Methods
@@ -46,23 +46,20 @@ function deleteAllCookies() {
 }
 
 
-
-function loadCookie() {
+// Function that displays all buttons
+function displayGifButtons() {
     cookieCount= getCookie("keycount");
     console.log("count: " + cookieCount);
-    //var actions = getCookie("keyword"+cookieCount);
+  
     // For the first time, if cookieCount is null
     if (cookieCount =="" || cookieCount == null) {
         cookieCount = 0;
     } else {
-    //Load the Array from the cookie 
-        //actions = []; //reset the array
+    //Load the cookie and display the button
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
             var gifbutton = "<button class='action btn btn-primary' data-name='" + action + "'>" + action + "</button>"; 
             if   (action !== "" && action !== null) {
-                //actions.push(action);
-                //actions[i] =getCookie("keyword"+i);
                 console.log("Array load i:" + i);
                 $("#gifButtonsView").prepend(gifbutton);
                 console.log("print button : " + action);
@@ -74,23 +71,8 @@ function loadCookie() {
 
 
 
-// Function that displays all gif buttons
-function displayGifButtons(){
-    //$("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
-    //load the cookie into action array   
-    console.log("display button")  
-    loadCookie();
-    //for (var i = 0; i < actions.length; i++){
-    //    var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
-        //var gifButton = $("<button>");
-        //gifButton.addClass("action");
-        //gifButton.addClass("btn btn-primary")
-        //gifButton.attr("data-name", actions[i]);
-        //gifButton.text(actions[i]);
-    //    $("#gifButtonsView").prepend(gifbutton);
-    //    console.log("arraylen: " + actions.length + " print button : " + i);
-    //}
-}
+
+
 // Function to add a new action button
 function addhpNewButton(){
     // when click on Home page search button
@@ -101,8 +83,7 @@ function addhpNewButton(){
           return false; // added so user cannot add a blank button
         }
         console.log(action + " empty button"); 
-        $("#gifButtonsView").empty();
-        //actions.push(action);
+        $("#gifButtonsView").empty(); //clear the buttons
         cookieCount= getCookie("keycount");
         cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
@@ -124,8 +105,7 @@ function addrpNewButton(){
       return false; // added so user cannot add a blank button
     }
     console.log(action + " empty button"); 
-    $("#gifButtonsView").empty();
-    //actions.push(action);
+    $("#gifButtonsView").empty(); //clear the buttons
     cookieCount= getCookie("keycount");
     cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
@@ -151,7 +131,7 @@ function removeLastButton(){
 // Function that displays all of the gifs
 function displayGifs(keyword){
     //var action = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + keyword + "&api_key=dc6zaTOxFJmzC&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + keyword + "&api_key=dc6zaTOxFJmzC&limit=10";
     console.log(queryURL); // displays the constructed url
     console.log(keyword);
     $.ajax({
