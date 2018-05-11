@@ -86,7 +86,7 @@ function displayGifButtons(){
     }
 }
 // Function to add a new action button
-function addNewButton(){
+function addhpNewButton(){
     // when click on Home page search button
     $("#searchGif").on("click", function(){
         var action = $("#action-input").val().trim();
@@ -106,6 +106,9 @@ function addNewButton(){
        
         return false;
         });
+    }
+
+function addrpNewButton(){
     
     //When click on Result page add button
     $("#addGif").on("click", function(){
@@ -247,6 +250,8 @@ function displayResult(){
     $(".btnView").show();
     $("#myTab").show();
     $("#myTabContent").show();
+    addrpNewButton();
+    removeLastButton();
     
     }
 
@@ -256,6 +261,7 @@ function displayResult(){
 loadMain();
 displayGifButtons(); // displays list of actions already created
 //addNewButton();
+addhpNewButton();
 //removeLastButton();
 // Document Event Listeners
 $(document).on("click", ".action",function() {
