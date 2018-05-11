@@ -77,8 +77,8 @@ function displayGifButtons(){
     //load the cookie into action array   
     console.log("display button")  
     loadCookie();
-    for (var i = 1; i < actions.length+1; i++){
-        var gifbutton = $("#gifButtonsView").html("<button> class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
+    for (var i = 0; i < actions.length; i++){
+        var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
         //var gifButton = $("<button>");
         //gifButton.addClass("action");
         //gifButton.addClass("btn btn-primary")
