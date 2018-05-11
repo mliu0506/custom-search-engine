@@ -56,7 +56,7 @@ function loadCookie() {
         cookieCount = 0;
     } else {
     //Load the Array from the cookie 
-        for (var i=1; i <= cookieCount +1; i++){
+        for (var i=1; i < cookieCount +1; i++){
             if   (actions[i] != "" && actions[i] != null) {
                 actions[i] =getCookie("keyword"+i);
                 console.log("load i:" + i);
@@ -74,7 +74,7 @@ function displayGifButtons(){
     //load the cookie into action array   
     console.log("display button")  
     loadCookie();
-    for (var i = 1; i <= actions.length+1; i++){
+    for (var i = 1; i < actions.length+1; i++){
         var gifButton = $("<button>");
         gifButton.addClass("action");
         gifButton.addClass("btn btn-primary")
