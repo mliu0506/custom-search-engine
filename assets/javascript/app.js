@@ -59,10 +59,13 @@ function loadCookie() {
         actions = []; //reset the array
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
+            var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
             if   (action != "" && actions != null) {
                 actions.push(action);
                 //actions[i] =getCookie("keyword"+i);
                 console.log("Array load i:" + i);
+                $("#gifButtonsView").prepend(gifbutton);
+                console.log("print button : " + i);
 
             } 
         } 
@@ -77,15 +80,16 @@ function displayGifButtons(){
     //load the cookie into action array   
     console.log("display button")  
     loadCookie();
-    for (var i = 0; i < actions.length; i++){
-        var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
+    //for (var i = 0; i < actions.length; i++){
+    //    var gifbutton = $("#gifButtonsView").html("<button class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
         //var gifButton = $("<button>");
         //gifButton.addClass("action");
         //gifButton.addClass("btn btn-primary")
         //gifButton.attr("data-name", actions[i]);
         //gifButton.text(actions[i]);
-        $("#gifButtonsView").prepend(gifbutton);
-    }
+    //    $("#gifButtonsView").prepend(gifbutton);
+    //    console.log("arraylen: " + actions.length + " print button : " + i);
+    //}
 }
 // Function to add a new action button
 function addhpNewButton(){
