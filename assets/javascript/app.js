@@ -93,9 +93,10 @@ function addNewButton(){
         }
         console.log(action); 
         //actions.push(action);
+        cookieCount= getCookie("keycount");
+        cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
-        cookieCount++;
         displayGifButtons();
         displayResult();
        
@@ -110,9 +111,10 @@ function addNewButton(){
     }
     console.log(action);
     //actions.push(action);
+    cookieCount= getCookie("keycount");
+    cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
-    cookieCount++;
     displayGifButtons();
  
     return false;
