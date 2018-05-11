@@ -58,8 +58,10 @@ function loadCookie() {
     //Load the Array from the cookie 
         for (var i=1; i < cookieCount +1; i++){
             if   (actions[i] != "" && actions[i] != null) {
-                actions[i] =getCookie("keyword"+i);
-                console.log("load i:" + i);
+                var action = getCookie("keyword"+i);
+                actions.push(action);
+                //actions[i] =getCookie("keyword"+i);
+                console.log("Array load i:" + i);
 
             } 
         } 
