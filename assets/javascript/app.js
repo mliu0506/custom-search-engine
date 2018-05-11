@@ -97,6 +97,7 @@ function addNewButton(){
         cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
+        console.log("count: " +cookieCount + " word: " + action); 
         displayGifButtons();
         displayResult();
        
@@ -115,6 +116,7 @@ function addNewButton(){
     cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
+    console.log("count: " +cookieCount + " word: " + action); 
     displayGifButtons();
  
     return false;
