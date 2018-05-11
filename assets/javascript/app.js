@@ -72,9 +72,9 @@ function loadCookie() {
 
 // Function that displays all gif buttons
 function displayGifButtons(){
-    $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
+    //$("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
     //load the cookie into action array   
-    console.log("empty button")  
+    console.log("display button")  
     loadCookie();
     for (var i = 1; i < actions.length+1; i++){
         var gifButton = $("<button>");
@@ -94,7 +94,8 @@ function addhpNewButton(){
         if (action == ""){
           return false; // added so user cannot add a blank button
         }
-        console.log(action); 
+        console.log(action + " empty button"); 
+        $("#gifButtonsView").empty();
         //actions.push(action);
         cookieCount= getCookie("keycount");
         cookieCount++;
@@ -116,7 +117,8 @@ function addrpNewButton(){
     if (action == ""){
       return false; // added so user cannot add a blank button
     }
-    console.log(action);
+    console.log(action + " empty button"); 
+    $("#gifButtonsView").empty();
     //actions.push(action);
     cookieCount= getCookie("keycount");
     cookieCount++;
