@@ -56,6 +56,7 @@ function loadCookie() {
         cookieCount = 0;
     } else {
     //Load the Array from the cookie 
+        actions = []; //reset the array
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
             if   (action != "" && actions != null) {
@@ -77,12 +78,13 @@ function displayGifButtons(){
     console.log("display button")  
     loadCookie();
     for (var i = 1; i < actions.length+1; i++){
-        var gifButton = $("<button>");
-        gifButton.addClass("action");
-        gifButton.addClass("btn btn-primary")
-        gifButton.attr("data-name", actions[i]);
-        gifButton.text(actions[i]);
-        $("#gifButtonsView").append(gifButton);
+        var gifbutton = $("#gifButtonsView").html("<button> class='action btn btn-primary' data-name='" + actions[i] + "'>" + actions[i] + "</button>"); 
+        //var gifButton = $("<button>");
+        //gifButton.addClass("action");
+        //gifButton.addClass("btn btn-primary")
+        //gifButton.attr("data-name", actions[i]);
+        //gifButton.text(actions[i]);
+        $("#gifButtonsView").prepend(gifbutton);
     }
 }
 // Function to add a new action button
