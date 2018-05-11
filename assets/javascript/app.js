@@ -74,7 +74,7 @@ function loadCookie() {
 function displayGifButtons(){
     $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the results
     //load the cookie into action array   
-    console.log("display button")  
+    console.log("empty button")  
     loadCookie();
     for (var i = 1; i < actions.length+1; i++){
         var gifButton = $("<button>");
@@ -82,7 +82,7 @@ function displayGifButtons(){
         gifButton.addClass("btn btn-primary")
         gifButton.attr("data-name", actions[i]);
         gifButton.text(actions[i]);
-        $("#gifButtonsView").prepend(gifButton);
+        $("#gifButtonsView").append(gifButton);
     }
 }
 // Function to add a new action button
