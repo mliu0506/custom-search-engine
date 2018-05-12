@@ -45,7 +45,7 @@ img {
 }
 
 
-.gifDiv, imageDiv{
+.gifDiv, .imageDiv{
     /* making the images go in one line rather than block & adding spacing between the images*/
     float: left;
     margin: 3px;
