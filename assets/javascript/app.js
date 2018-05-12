@@ -210,11 +210,11 @@ function displayImages(keyword){
             imageDiv.addClass("imageDiv");
             // pulling rating of gif
             var imageNum = $("<p>").text("Number: " + i);
-            ImageDiv.append(imageNum);
-            var Image = $("<img>");
-            Image.attr("src", results[i].link); // still image stored into src of image
-            Image.addClass("image");
-            imageDiv.append(Image);
+            imageDiv.append(imageNum);
+            var image = $("<img>");
+            image.attr("src", results[i].link); // still image stored into src of image
+            image.addClass("image");
+            imageDiv.append(image);
             $("#image-content").prepend(imageDiv);
         }
     });
