@@ -57,7 +57,7 @@ function displayButtons() {
     //Load the cookie and display the button
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
-            var gifbutton = "<button class='action btn btn-primary btnkeyword' data-name='" + action + "'>" + action + "</button>"; 
+            var gifbutton = "<button class='action btn btn-primary btnkeyword' data-name='" + action + "' data-index='" + i + "'>" + action + "</button>"; 
             if   (action !== "" && action !== null) {
                 console.log("Array load i:" + i);
                 $("#ButtonsView").prepend(gifbutton);
@@ -256,8 +256,8 @@ $(document).on("click", ".action",function() {
 
 //if double the keyword button, it will remove the selected button and cookie
 $( document).on("dblclick",".action",function() {
-    var action = $(this).attr("data-name");
-    delCookie();
+    var index = $(this).attr("data-index");
+    delCookie("keyword"+index);
     $(this).remove();
   });
 
