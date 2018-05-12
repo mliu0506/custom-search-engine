@@ -73,6 +73,9 @@ function displayButtons() {
 function addhpNewButton(){
     // when click on Home page search button
     $("#searchKeyword").on("click", function(){
+        event.preventDefault();
+        //avoid double click
+        $(this).prop('disabled', true);
         var action = $("#hp-action-input").val().trim();
         
         if (action == ""){
@@ -96,6 +99,9 @@ function addrpNewButton(){
     
     //When click on Result page add button
     $("#addKeyword").on("click", function(){
+    event.preventDefault();
+    //avoid double click
+    $(this).prop('disabled', true);
     var action = $("#rp-action-input").val().trim();
     if (action == ""){
       return false; // added so user cannot add a blank button
@@ -115,6 +121,9 @@ function addrpNewButton(){
 // Function to remove all button
 function removeAllButton(){
     $("#clearKeyword").on("click", function(){
+    event.preventDefault();
+    //avoid double click
+    $(this).prop('disabled', true);
     deleteAllCookies();
     $("#ButtonsView").empty(); //clear the buttons
     return false;
