@@ -1,6 +1,6 @@
 
 // Creating Functions & Methods
-var cookieCount;  //Define the number of keyword save into cookie
+var cookieCount;  //Define the number of keyword count save into cookie
 
 //Save the keywords into cookie
 // cname - the parameter name
@@ -57,10 +57,10 @@ function displayButtons() {
     //Load the cookie and display the button
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
-            var gifbutton = "<button class='action btn btn-primary btnkeyword' data-name='" + action + "' data-index='" + i + "'>" + action + "</button>"; 
+            var button = "<button class='action btn btn-primary btnkeyword' data-name='" + action + "' data-index='" + i + "'>" + action + "</button>"; 
             if   (action !== "" && action !== null) {
                 console.log("Array load i:" + i);
-                $("#ButtonsView").prepend(gifbutton);
+                $("#ButtonsView").prepend(button);
                 console.log("print button : " + action);
 
             } 
@@ -115,10 +115,8 @@ function addrpNewButton(){
 // Function to remove all button
 function removeAllButton(){
     $("#clearKeyword").on("click", function(){
-    //actions.pop(action);
-    //list.remove(action);
     deleteAllCookies();
-    displayButtons();
+    $("#ButtonsView").empty(); //clear the buttons
     return false;
     });
 }
