@@ -1,15 +1,13 @@
 body{
-	/*background: url("../images/background.jpg");*/
-	background-size: 100%;
-    /*background-repeat: no-repeat;*/
-    /*color: black;*/
-    /*color: #fff;*/
-    /*text-align: center; */
-    
+	background-size: 100%; 
 }
 * {
 	box-sizing: border-box;
 }
+#mainHeader {
+    text-align: center;
+}
+
 img { 
     height: 150px;
     width: 150px;
@@ -17,75 +15,73 @@ img {
 .btn {
     /* adding spacing between each button*/
     margin: 3px;
-    /*background-color: #999999;
-    border-color: #fff; */
     background-color: #fff;
     border-color: #999999;
     color: #999999;
     font-weight: 200;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
 }
 
-.btnmain {
+.btn:btnmain {
     font-weight: 500;
 }
 
-.gifDiv{
+.btn:btnkeyword {
+    border-radius: 43%;
+}
+
+.btn:hover {
+    background-color: rgba(199, 196, 196, 0.6); 
+    color: black;
+    border-color: white;
+}
+
+#hp-action-input,#rp-action-input {
+    width:100%;
+    box-shadow: 0 0px 16px 0 rgba(0,0,0,0.19), 0 0px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.gifDiv, imageDiv{
     /* making the images go in one line rather than block & adding spacing between the images*/
     float: left;
     margin: 3px;
 }
 .container {
-   background-color: #fff;
-   color:#9999; 
-	/*opacity: 0.8;*/
-    /*padding: 20px;*/
+    background-color: #fff;
+    color:#9999; 
     width:100%;
 }
 
-.center {
-    text-align: center;
-}
 
-.left {
-    margin: 0;
-}
-
-.hplogo {
-    height: 300px;
-    width: 600px;
+.hplogo, .rplogo {
+    width: 100%;
     padding-top: 5px;
 
-}
-
-.rplogo {
-    height: 50px;
-    width: 120px;
-    padding-top: 5px;
 }
 
 .jumbotron {
-    background-color: inherit; 
-   /*background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
-    */
+    width:100%;
+    background-color: #fdfffe;
+    background-image: linear-gradient(120deg, #fefffe,#e4e3e3,#fefffe);
+    text-align: center; 
 }
-.jumbotron .h1, .jumbotron h1 {
-    /*text-align: center;*/
- 	font-size: 36px;
-}
-div#footer {
+
+#footer {
 	clear: both;
 	margin-top: 80px;
 	position: center;
 	bottom: 0;
 	left: 0;
-	text-align: center;
+    text-align: center;
+    
 }
 
-#rp-action-input {
-    width:528px;
-    height: 40px;
-}
+
+
 
 /* Media Queries  */
 /* xs < 768 */ 

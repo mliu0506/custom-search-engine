@@ -1,19 +1,18 @@
 
-// An array of actions, new actions will be pushed into this array;
-//var actions = ["Dancing", "Jogging", "Falling", "Reading", "Pushing", "Swimming", "Eating", "Skipping", "Crying", "Winking","Beyoncing", "Strolling", "Hopping"];
 // Creating Functions & Methods
-var maxCookie = 10;
-var actions = new Array();
-var cookieCount;
+var cookieCount;  //Define the number of keyword save into cookie
 
-//Save the keyword in local cookie
+//Save the keywords into cookie
+// cname - the parameter name
+// cvalue - vlaue of the parameter
+// exdays - expiry date of the parameter i.e. 30 days
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
+//Get the value from the cookie
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -29,11 +28,11 @@ function getCookie(cname) {
     }
     return "";
 }
-
+//Delete the cookie by passing the parameter name
 function delCookie(cname) {
     document.cookie = cname + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
 }
-
+//Clear all cookie 
 function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
@@ -47,7 +46,7 @@ function deleteAllCookies() {
 
 
 // Function that displays all buttons
-function displayGifButtons() {
+function displayButtons() {
     cookieCount= getCookie("keycount");
     console.log("count: " + cookieCount);
   
@@ -58,10 +57,10 @@ function displayGifButtons() {
     //Load the cookie and display the button
         for (var i=1; i < cookieCount +1; i++){
             var action = getCookie("keyword"+i);
-            var gifbutton = "<button class='action btn btn-primary' data-name='" + action + "'>" + action + "</button>"; 
+            var gifbutton = "<button class='action btn btn-primary btnkeyword' data-name='" + action + "'>" + action + "</button>"; 
             if   (action !== "" && action !== null) {
                 console.log("Array load i:" + i);
-                $("#gifButtonsView").prepend(gifbutton);
+                $("#ButtonsView").prepend(gifbutton);
                 console.log("print button : " + action);
 
             } 
@@ -70,26 +69,23 @@ function displayGifButtons() {
 }
 
 
-
-
-
 // Function to add a new action button
 function addhpNewButton(){
     // when click on Home page search button
-    $("#searchGif").on("click", function(){
-        var action = $("#action-input").val().trim();
+    $("#searchKeyword").on("click", function(){
+        var action = $("#hp-action-input").val().trim();
         
         if (action == ""){
           return false; // added so user cannot add a blank button
         }
         console.log(action + " empty button"); 
-        $("#gifButtonsView").empty(); //clear the buttons
+        $("#ButtonsView").empty(); //clear the buttons
         cookieCount= getCookie("keycount");
         cookieCount++;
         setCookie("keycount", cookieCount, 30); //save cookie
         setCookie("keyword"+cookieCount, action, 30);
         console.log("count: " +cookieCount + " word: " + action); 
-        displayGifButtons();
+        displayButtons();
         displayResult();
        
         return false;
@@ -99,32 +95,30 @@ function addhpNewButton(){
 function addrpNewButton(){
     
     //When click on Result page add button
-    $("#addGif").on("click", function(){
+    $("#addKeyword").on("click", function(){
     var action = $("#rp-action-input").val().trim();
     if (action == ""){
       return false; // added so user cannot add a blank button
     }
     console.log(action + " empty button"); 
-    $("#gifButtonsView").empty(); //clear the buttons
+    $("#ButtonsView").empty(); //clear the buttons
     cookieCount= getCookie("keycount");
     cookieCount++;
     setCookie("keycount", cookieCount, 30); // save cookie
     setCookie("keyword"+cookieCount, action, 30);
     console.log("count: " +cookieCount + " word: " + action); 
-    displayGifButtons();
+    displayButtons();
  
     return false;
     });
 }
-// Function to remove last action button
-    // Doesnt work properly yet removes all of the added buttons
-    // rather than just the last
-function removeLastButton(){
-    $("#removeGif").on("click", function(){
+// Function to remove all button
+function removeAllButton(){
+    $("#clearKeyword").on("click", function(){
     //actions.pop(action);
     //list.remove(action);
     deleteAllCookies();
-    displayGifButtons();
+    displayButtons();
     return false;
     });
 }
@@ -223,35 +217,33 @@ function displayImages(keyword){
     });
 }
 
+//Load the Home page
 function loadMain(){
-
-$(".rpheader").hide();
-$(".btnView").hide();
+$("#rpheader").hide();
+$("#ButtonsView").hide();
 $("#myTab").hide();
 $("#myTabContent").hide();
-
 }
 
+// Load the result page
 function displayResult(){
-    $(".mainHeader").hide();
-    $(".rpheader").show();
-    $(".btnView").show();
+    $("#mainHeader").hide();
+    $("#rpheader").show();
+    $("#ButtonsView").show();
     $("#myTab").show();
     $("#myTabContent").show();
     addrpNewButton();
-    removeLastButton();
-    
-    }
+    removeAllButton();
+}
 
 
 
 // Calling Functions & Methods
-loadMain();
-displayGifButtons(); // displays list of actions already created
-//addNewButton();
-addhpNewButton();
-//removeLastButton();
-// Document Event Listeners
+loadMain(); // Load the main page
+displayButtons(); // initial setup for the display button
+addhpNewButton(); // initial setup for the home page search button
+
+// Document Event Listeners for the keyword button
 $(document).on("click", ".action",function() {
     var action = $(this).attr("data-name");
     displayGoogle(action);
@@ -260,7 +252,7 @@ $(document).on("click", ".action",function() {
 });
 
 
-
+// Document Event Listeners for the GIPHY image
 $(document).on("click", ".image", function(){
     var state = $(this).attr('data-state');
     if ( state == 'still'){
@@ -274,7 +266,7 @@ $(document).on("click", ".image", function(){
 
 // Return to Home page if the result page logo on click
 $(".rplogo").on("click", function(){
-    $(".mainHeader").show();    
+    $("#mainHeader").show();    
     loadMain();
 
 });

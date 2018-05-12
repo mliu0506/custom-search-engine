@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Micgle Search</title>
+  <title>Custom Search Engine</title>
 
   <!-- Bootstrap Core min  CSS -->
-  <!--
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   
   <!-- Custom styles for this template -->
@@ -24,35 +21,33 @@
 </head>
 <body>
 <!-- Main Header  -->
-<div class="jumbotron mainHeader">
-    
-        <div class="container center">
-            <img alt="Micgle" class="hplogo" src="assets/images/google_custom.png" >
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <form id="gif-form" role="form" >
-                   
-                    <div class="form-group">
-                        <input class="col-4" type="text" id="action-input">
-                    </div>
-                    <input id="searchGif" type="submit" value="Search" class="btn btn-primary btnmain">
-
-                </form>    
+<div id= "mainHeader">
+    <div class="container">
+        <div class= "row col-12 justify-content-center" >     
+            <img alt="google" class="col-9 img-fluid hplogo" src="assets/images/google_custom.png" >
+        </div>    
+        
+        <form id="search-form" role="form" >
+            <div class="row col-12 form-group justify-content-center">
+                    <input id="hp-action-input" type="text" class="col-8">
+                    <input id="searchKeyword" type="submit" value="Search" class="btn btn-primary btnmain">
             </div>
-            
-
-        </div>
+        </form>    
+       
     </div>
+</div>
 
     <!-- Header  -->
  
-    <div class="container left rpheader">
-            <div class="row col-lg-12">
-                <form id="gif-form" role="form">
-                    <div class="form-group">
-                        <img alt="Micgle" class="rplogo" src="assets/images/result_page_logo.png" />
-                        <input id="rp-action-input" type="text">
-                        <input id="addGif" type="submit" value="Add Keyword" class="btn btn-primary">
-                        <input id="removeGif" type="submit" value="Clear" class="btn btn-primary">
+    <div id="rpheader" class="jumbotron container">
+            <div class="row col-12 justify-content-center">
+                    <img alt="Custom Search" class="img-fluid rplogo" src="assets/images/result_page_logo.png" />
+            </div>
+                <form id="search-form" role="form">
+                    <div class="row col-12 form-group justify-content-center">
+                        <input id="rp-action-input" type="text" class="col-8">
+                        <input id="addKeyword" type="submit" value="Add Keyword" class="btn btn-primary">
+                        <input id="clearKeyword" type="submit" value="Clear" class="btn btn-primary">
                     </div>
                     
                 </form>    
@@ -61,9 +56,9 @@
     
     <!-- Buttons  -->
     <hr>
-            
-    <div id="gifButtonsView"></div>
-        
+    <div class="row col-12">        
+            <div id="ButtonsView"></div>
+    </div>    
     <!-- Search Result Tab -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -83,55 +78,7 @@
     </div>
     
     
-    <!---    
-    <div id="resultTab" class="container">
-    <h3 class="text-center">Search Result</h3>  
-    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#home">GOOGLE</a></li>
-      <li><a data-toggle="tab" href="#menu1">IMAGE</a></li>
-      <li><a data-toggle="tab" href="#menu2">GIFPHY</a></li>
-    </ul>
-
-    <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-              <h2>Mike Ross, Manager</h2>
-              <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <h2>Chandler Bing, Guitarist</h2>
-              <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <h2>Peter Griffin, Bass player</h2>
-              <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
-            </div>
-    </div>
-</div>
---> 
-<!-- Main Container  -->   
-<!--     
     
-    <div class="container left">
-        <div class="row col-12">
-            <div id="gifsView"></div>
-        </div>
--->
-        
-        
-        <!-- Action Submission Form  -->
-<!--        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <form id="gif-form" role="form">
-                <h2><legend>Action Submission</legend></h2>
-                <div class="form-group">
-                    <label for="action-input">Add your action below</label>
-                    <input type="text" id="action-input">
-                </div>
-                <input id="addGif" type="submit" value="Add Keyword" class="btn btn-primary">
-                <input id="removeGif" type="submit" value="Remove Keyword" class="btn btn-primary">
-            </form>    
-        </div>
-    </div>
--->
     <footer>
         <div id="footer" class="container center">
             <h4 id="copyright">&copy; Copyright 2018 Michael Liu</h4>
