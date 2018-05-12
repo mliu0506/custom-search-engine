@@ -246,7 +246,7 @@ loadMain(); // Load the main page
 displayButtons(); // initial setup for the display button
 addhpNewButton(); // initial setup for the home page search button
 
-// Document Event Listeners for the keyword button
+// if keyword button is selected, it will trigger the API to retrive the data
 $(document).on("click", ".action",function() {
     var action = $(this).attr("data-name");
     displayGoogle(action);
@@ -254,6 +254,12 @@ $(document).on("click", ".action",function() {
     displayImages(action);
 });
 
+//if double the keyword button, it will remove the selected button and cookie
+$( document).on("dblclick",".action",function() {
+    var action = $(this).attr("data-name");
+    delCookie();
+    $(this).remove();
+  });
 
 // Document Event Listeners for the GIPHY image
 $(document).on("click", ".image", function(){
