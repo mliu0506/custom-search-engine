@@ -208,6 +208,9 @@ function displayImages(keyword){
 
             var imageDiv = $("<div>"); //div for the gifs to go inside
             imageDiv.addClass("imageDiv");
+            // pulling rating of gif
+            var imageNum = $("<p>").text("Number: " + i);
+            ImageDiv.append(imageNum);
             var Image = $("<img>");
             Image.attr("src", results[i].link); // still image stored into src of image
             Image.addClass("image");
