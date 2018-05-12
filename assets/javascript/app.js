@@ -90,6 +90,8 @@ function addhpNewButton(){
         console.log("count: " +cookieCount + " word: " + action); 
         displayButtons();
         displayResult();
+        //enable it now
+        $(this).prop('disabled', false);
        
         return false;
         });
@@ -114,6 +116,8 @@ function addrpNewButton(){
     setCookie("keyword"+cookieCount, action, 30);
     console.log("count: " +cookieCount + " word: " + action); 
     displayButtons();
+    //enable it now
+    $(this).prop('disabled', false);
  
     return false;
     });
@@ -126,6 +130,8 @@ function removeAllButton(){
     $(this).prop('disabled', true);
     deleteAllCookies();
     $("#ButtonsView").empty(); //clear the buttons
+    //enable it now
+    $(this).prop('disabled', false);
     return false;
     });
 }
