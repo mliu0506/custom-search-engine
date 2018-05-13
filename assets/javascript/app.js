@@ -1,6 +1,7 @@
 
 // Creating Functions & Methods
 var cookieCount;  //Define the number of keyword count save into cookie
+var activeTab;  // Define the active tab
 
 //Save the keywords into cookie
 // cname - the parameter name
@@ -257,12 +258,24 @@ loadMain(); // Load the main page
 displayButtons(); // initial setup for the display button
 addhpNewButton(); // initial setup for the home page search button
 
+//update the selected tab (use data-toggle=tab)
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    activeTab = e.target.text;
+    console.log(e.target); // newly activated tab
+    console.log(e.relatedTarget); // previous active tab
+  });
+
 // if keyword button is selected, it will trigger the API to retrive the data
 $(document).on("click", ".action",function() {
     var action = $(this).attr("data-name");
-    displayGoogle(action);
-    displayGifs(action);
-    displayImages(action);
+    //if (activeTab == "GOOGLE") {
+        displayGoogle(action);
+    //} else if (activeTab == "GIPHY") {
+        displayGifs(action);
+    //} else if (activeTab == "IMAGE") {
+        displayImages(action);
+    //}
+    console.log("active tab: "+ activeTab);
 });
 
 //if double the keyword button, it will remove the selected button and cookie

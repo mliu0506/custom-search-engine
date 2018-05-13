@@ -46,8 +46,9 @@
                 <form id="search-form" role="form">
                     <div class="row col-12 form-group justify-content-center">
                         <input id="rp-action-input" type="text" class="col-9">
-                        <input id="addKeyword" type="submit" value="Add" class="btn btn-primary col-1">
-                        <input id="clearKeyword" type="submit" value="Clear" class="btn btn-primary col-1">
+                        <a id="addKeyword" href="#" class="btn btn-light btn-sm pull-right"><i class="fa fa-search-plus"></i></a>
+                        <a id="clearKeyword" href="#" class="btn btn-light btn-sm pull-right"><i class="fa fa-trash"></i></a>
+
                     </div>
                     
                 </form>    
@@ -64,13 +65,13 @@
     <div class="container">    
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#giphy-content" role="tab" aria-controls="giphytab" aria-selected="true">GIPHY</a>
+              <a class="nav-link active" id="giphy-tab" data-toggle="tab" href="#giphy-content" role="tab" aria-controls="giphytab" aria-selected="true">GIPHY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#image-content" role="tab" aria-controls="imagetab" aria-selected="false">IMAGE</a>
+              <a class="nav-link" id="image-tab" data-toggle="tab" href="#image-content" role="tab" aria-controls="imagetab" aria-selected="false">IMAGE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#google-content" role="tab" aria-controls="googletab" aria-selected="false">GOOGLE</a>
+              <a class="nav-link" id="google-tab" data-toggle="tab" href="#google-content" role="tab" aria-controls="googletab" aria-selected="false">GOOGLE</a>
             </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -94,6 +95,7 @@
  
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   
 
