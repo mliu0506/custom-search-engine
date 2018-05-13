@@ -30,14 +30,16 @@ img {
     border-radius: 43%;
 }
 
-.btnView {
-    border-bottom: 1px solid gray;
-    overflow: hidden;
+#ButtonsView {
+    border-top: 1px solid gray;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     /* hide horizontal scrollbar */
     -ms-overflow-style: none; 
 }
 
-.btnView::-webkit-scrollbar { 
+#ButtonsView::-webkit-scrollbar { 
     width: 0; 
 }
 
@@ -89,40 +91,24 @@ img {
 /* xs < 768 */ 
 @media screen and (max-width: 767px) { 
     body,.btn,#myTab,#copyright { font-size: 0.8em; }
-    .btnView {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        }
+
     } 
   
   /* sm */ 
   @media screen and (min-width: 768px) { 
     body,.btn,#myTab,#copyright { font-size: 0.9em; } 
-    .btnView {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        }
+
   } 
   
   /* md */ 
   @media screen and (min-width: 992px) { 
     body,.btn,#myTab,#copyright { font-size: 1em; } 
-    .btnView {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        }
+
   } 
   
   /* lg */ 
   @media screen and (min-width: 1200px) { 
     body,.btn,#myTab,#copyright { font-size: 1em; }
-    .btnView {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        } 
+
   }
   
