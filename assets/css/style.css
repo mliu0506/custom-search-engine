@@ -35,7 +35,6 @@ img {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 65em;
     display: flex;
     -webkit-overflow-scrolling: touch;
     /* hide horizontal scrollbar */
