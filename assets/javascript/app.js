@@ -74,10 +74,7 @@ function addhpNewButton(){
     // when click on Home page search button
     $("#searchKeyword").on("click", function(){
         event.preventDefault();
-        //avoid double click
-        $(this).prop('disabled', true);
         var action = $("#hp-action-input").val().trim();
-        
         if (action == ""){
           return false; // added so user cannot add a blank button
         }
@@ -90,9 +87,6 @@ function addhpNewButton(){
         console.log("count: " +cookieCount + " word: " + action); 
         displayButtons();
         displayResult();
-        //enable it now
-        $(this).prop('disabled', false);
-       
         return false;
         });
     }
@@ -102,8 +96,6 @@ function addrpNewButton(){
     //When click on Result page add button
     $("#addKeyword").on("click", function(){
     event.preventDefault();
-    //avoid double click
-    $(this).prop('disabled', true);
     var action = $("#rp-action-input").val().trim();
     if (action == ""){
       return false; // added so user cannot add a blank button
@@ -116,8 +108,7 @@ function addrpNewButton(){
     setCookie("keyword"+cookieCount, action, 30);
     console.log("count: " +cookieCount + " word: " + action); 
     displayButtons();
-    //enable it now
-    $(this).prop('disabled', false);
+
  
     return false;
     });
@@ -126,12 +117,8 @@ function addrpNewButton(){
 function removeAllButton(){
     $("#clearKeyword").on("click", function(){
     event.preventDefault();
-    //avoid double click
-    $(this).prop('disabled', true);
     deleteAllCookies();
     $("#ButtonsView").empty(); //clear the buttons
-    //enable it now
-    $(this).prop('disabled', false);
     return false;
     });
 }
@@ -149,8 +136,9 @@ function displayGifs(keyword){
         console.log(response); // console test to make sure something returns
         $("#giphy-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
         var results = response.data; //shows results of gifs
-        if (results == ""){
-          alert("There isn't a gif for this selected button");
+        if (results == ""){  //if no data return disply error message
+            $("#giphy-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#giphy-content").append("<BR> There isn't a gif for this selected button");
         }
         for (var i=0; i<results.length; i++){
 
@@ -182,14 +170,20 @@ function displayGoogle(keyword){
     console.log(keyword);
     $.ajax({
         url: queryURL,
-        method: 'GET'
+        method: 'GET',
+        error: function(xhr, status, error) {  //if Error return disply error message
+            $("#google-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#google-content").append("<BR> Daily Limit Excessed.  Please try again later!");
+         }
     })
     .done(function(response) {
         console.log(response); // console test to make sure something returns
         $("#google-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
         var results = response.items; //shows results of google
+        var error = response.errors;
         if (results == ""){
-          alert("There isn't a gif for this selected button");
+            $("#google-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#google-content").append("<BR> There isn't a record for this selected button!");
         }
         for (var i=0; i<results.length; i++){
 
@@ -208,24 +202,28 @@ function displayImages(keyword){
     console.log(keyword);
     $.ajax({
         url: queryURL,
-        method: 'GET'
+        method: 'GET',
+        error: function(xhr, status, error) { //if Error return disply error message
+            $("#image-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#image-content").append("<BR> Daily Limit Excessed.  Please try again later!");
+         }
     })
     .done(function(response) {
         console.log(response); // console test to make sure something returns
         $("#image-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
         var results = response.items; //shows results of gifs
         if (results == ""){
-          alert("There isn't a gif for this selected button");
+            $("#image-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#image-content").append("<BR> There isn't a record for this selected button!");
         }
         for (var i=0; i<results.length; i++){
-
-            var imageDiv = $("<div>"); //div for the gifs to go inside
+            var imageDiv = $("<div>"); //div for the images to go inside
             imageDiv.addClass("imageDiv");
-            // pulling rating of gif
-            var imageNum = $("<p>").text("Number: " + i);
+            var countNum = i;
+            var imageNum = $("<p>").text("Number: " + countNum + 1);
             imageDiv.append(imageNum);
             var image = $("<img>");
-            image.attr("src", results[i].link); // still image stored into src of image
+            image.attr("src", results[i].link); // image stored into src of image
             image.addClass("image");
             imageDiv.append(image);
             $("#image-content").prepend(imageDiv);

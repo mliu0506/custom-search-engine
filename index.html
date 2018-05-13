@@ -23,7 +23,7 @@
 <!-- Main Header  -->
 <div id= "mainHeader">
     <div class="container">
-        <div class= "row col-12 justify-content-center" >     
+        <div class= "row col-12 justify-content-center align-items-center" >     
             <img alt="google" class="col-9 img-fluid hplogo" src="assets/images/google_custom.png" >
         </div>    
         
@@ -40,14 +40,14 @@
     <!-- Header  -->
  
     <div id="rpheader" class="jumbotron container">
-            <div class="row col-12 justify-content-center">
+            <div class="row col-12 justify-content-center align-items-center">
                     <img alt="Custom Search" class="img-fluid rplogo" src="assets/images/result_page_logo.png" />
             </div>
                 <form id="search-form" role="form">
                     <div class="row col-12 form-group justify-content-center">
-                        <input id="rp-action-input" type="text" class="col-8">
-                        <input id="addKeyword" type="submit" value="Add" class="btn btn-primary">
-                        <input id="clearKeyword" type="submit" value="Clear" class="btn btn-primary">
+                        <input id="rp-action-input" type="text" class="col-9">
+                        <input id="addKeyword" type="submit" value="Add" class="btn btn-primary col-1">
+                        <input id="clearKeyword" type="submit" value="Clear" class="btn btn-primary col-1">
                     </div>
                     
                 </form>    
@@ -55,28 +55,31 @@
     </div>
     
     <!-- Buttons  -->
-    <hr>
+    <div class="container">
     <div class="row col-12">        
             <div id="ButtonsView"></div>
+    </div>
     </div>    
     <!-- Search Result Tab -->
+    <div class="container">    
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#google-content" role="tab" aria-controls="googletab" aria-selected="true">GOOGLE</a>
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#giphy-content" role="tab" aria-controls="giphytab" aria-selected="true">GIPHY</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="profile-tab" data-toggle="tab" href="#image-content" role="tab" aria-controls="imagetab" aria-selected="false">IMAGE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#giphy-content" role="tab" aria-controls="gifphytab" aria-selected="false">GIPHY</a>
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#google-content" role="tab" aria-controls="googletab" aria-selected="false">GOOGLE</a>
             </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="google-content" role="tabpanel" aria-labelledby="google-tab">...</div>
+            <div class="tab-pane fade show active" id="giphy-content" role="tabpanel" aria-labelledby="giphy-tab">...</div>
             <div class="tab-pane fade" id="image-content" role="tabpanel" aria-labelledby="image-tab">...</div>
-            <div class="tab-pane fade" id="giphy-content" role="tabpanel" aria-labelledby="giphy-tab">...</div>
+            <div class="tab-pane fade" id="google-content" role="tabpanel" aria-labelledby="google-tab">...</div>
     </div>
-    
+    </div>
+
     
     
     <footer>
