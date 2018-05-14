@@ -105,21 +105,6 @@ img {
   /* sm */ 
   @media screen and (min-width: 768px) { 
     body,.btn,#myTab,#copyright { font-size: 0.9em; } 
-    #ButtonsView {
-        /*border-top: 1px solid gray;*/
-        white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/    
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: normal; /* normal (default) - warp the button   nowrap - overflow and scrolling*/ 
-        display: flex;
-        -webkit-overflow-scrolling: touch; /* if overflow it use touch scrolling for mobile device */
-        /* hide horizontal scrollbar */
-        -ms-overflow-style: none; 
-    }
-    
-    #ButtonsView::-webkit-scrollbar { 
-        width: 0; 
-    }
   } 
   
   /* md */ 
