@@ -183,7 +183,7 @@ function displayGoogle(keyword){
         console.log(response); // console test to make sure something returns
         $("#google-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
         var results = response.items; //shows results of google
-        var error = response.errors;
+    
         if (results == ""){
             $("#google-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
             $("#google-content").append("<BR> There isn't a record for this selected button!");
@@ -233,6 +233,40 @@ function displayImages(keyword){
         }
     });
 }
+
+
+// Function that displays all of the reords from New York Times
+function displayNews(keyword){
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=c133bd2c740147f58ccc6b561a9d3b63&page=0&q=" + keyword;
+    console.log(queryURL); // displays the constructed url
+    console.log(keyword);
+    $.ajax({
+        url: queryURL,
+        method: 'GET',
+        error: function(xhr, status, error) {  //if Error return disply error message
+            $("#news-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#news-content").append("<BR> Issues encounter.  Please try again later!");
+         }
+    })
+    .done(function(response) {
+        console.log(response); // console test to make sure something returns
+        $("#news-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+        var results = response.docs; //shows results of google
+     
+        if (results == ""){
+            $("#news-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+            $("#news-content").append("<BR> There isn't a record for this selected button!");
+        }
+        for (var i=0; i<results.length; i++){
+
+            $("#news-content").append("<BR>" + results[i].snippet);
+            $("#news-content").append("<BR><a class='smallFont' target='_blank' href= '" + results[i].web_url +"'>" + results[i].web_url + "</a>");
+            $("#news-content").append("<BR>" );
+        }
+    });
+}
+
+
 
 //Load the Home page
 function loadMain(){
