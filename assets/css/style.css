@@ -63,7 +63,7 @@ img {
     padding-bottom: 10px;
 }
 
-#google-content,#news-content {
+#giphy-content,#images-content,#google-content,#news-content {
     color: blue;
     font-weight: 500;
 }
