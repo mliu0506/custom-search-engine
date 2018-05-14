@@ -303,15 +303,15 @@ $('.nav-tabs').on('click', function(e) {
 // if keyword button is selected, it will trigger the API to retrive the data
 $(document).on("click", ".action",function() {
     var action = $(this).attr("data-name");
-    if (activeTab == "GOOGLE") {
+    //if (activeTab == "GOOGLE") {
         displayGoogle(action);
-    } else if (activeTab == "GIPHY") {
+    //} else if (activeTab == "GIPHY") {
         displayGifs(action);
-    } else if (activeTab == "IMAGES") {
+    //} else if (activeTab == "IMAGES") {
         displayImages(action);
-    } else if (activeTab == "NEWS") {
+    //} else if (activeTab == "NEWS") {
         displayNews(action);
-    }
+    //}
     console.log("active tab: "+ activeTab);
 });
 
