@@ -31,12 +31,12 @@ img {
 }
 
 #ButtonsView {
-    border-top: 1px solid gray;
+    /*border-top: 1px solid gray;*/
     overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap;
+    white-space: normal; /* normal (default) - warp the button   nowrap - overflow and scrolling*/ 
     display: flex;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; /* if overflow it use touch scrolling for mobile device */
     /* hide horizontal scrollbar */
     -ms-overflow-style: none; 
 }
@@ -70,10 +70,16 @@ img {
 
 }
 
+/* Result page header */
 .jumbotron {
     width:100%;
-    background-color: #fdfffe;
+    background-color: #fff;
     text-align: center; 
+    padding-bottom: 10px;
+}
+
+.smallFont{
+    font-size: 0.8em;
 }
 
 #footer {
@@ -93,13 +99,17 @@ img {
 /* xs < 768 */ 
 @media screen and (max-width: 767px) { 
     body,.btn,#myTab,#copyright { font-size: 0.8em; }
-
+    #ButtonView {
+        white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/
     } 
-  
+}
+
   /* sm */ 
   @media screen and (min-width: 768px) { 
     body,.btn,#myTab,#copyright { font-size: 0.9em; } 
-
+    #ButtonView {
+        white-space: nowrap; /* For mobile device, use touch scrolling to view the button panel*/
+    } 
   } 
   
   /* md */ 

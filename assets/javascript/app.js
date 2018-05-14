@@ -80,6 +80,7 @@ function addhpNewButton(){
           return false; // added so user cannot add a blank button
         }
         console.log(action + " empty button"); 
+        $("#hp-action-input").empty(); //clear the input text
         $("#ButtonsView").empty(); //clear the buttons
         cookieCount= getCookie("keycount");
         cookieCount++;
@@ -101,7 +102,8 @@ function addrpNewButton(){
     if (action == ""){
       return false; // added so user cannot add a blank button
     }
-    console.log(action + " empty button"); 
+    console.log(action + " empty button");
+    $("#rp-action-input").empty(); //clear the input text 
     $("#ButtonsView").empty(); //clear the buttons
     cookieCount= getCookie("keycount");
     cookieCount++;
@@ -189,7 +191,7 @@ function displayGoogle(keyword){
         for (var i=0; i<results.length; i++){
 
             $("#google-content").append("<BR>" + results[i].htmlTitle);
-            $("#google-content").append("<BR><a href= '" + results[i].link +"'>" + results[i].link + "</a>");
+            $("#google-content").append("<BR><a class='smallFont' target='_blank' href= '" + results[i].link +"'>" + results[i].link + "</a>");
             $("#google-content").append("<BR>" );
         }
     });
@@ -217,11 +219,10 @@ function displayImages(keyword){
             $("#image-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
             $("#image-content").append("<BR> There isn't a record for this selected button!");
         }
-        for (var i=0; i<results.length; i++){
+        for (var i=1; i<results.length + 1; i++){
             var imageDiv = $("<div>"); //div for the images to go inside
             imageDiv.addClass("imageDiv");
-            var countNum = i;
-            var imageNum = $("<p>").text("Number: " + countNum + 1);
+            var imageNum = $("<p>").text("Number: " + i);
             imageDiv.append(imageNum);
             var image = $("<img>");
             image.attr("src", results[i].link); // image stored into src of image
