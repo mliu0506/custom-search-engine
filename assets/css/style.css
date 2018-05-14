@@ -30,20 +30,6 @@ img {
     border-radius: 43%;
 }
 
-#ButtonsView {
-    /*border-top: 1px solid gray;*/
-
-    white-space: normal; /* normal (default) - warp the button   nowrap - overflow and scrolling*/ 
-    display: flex;
-    -webkit-overflow-scrolling: touch; /* if overflow it use touch scrolling for mobile device */
-    /* hide horizontal scrollbar */
-    -ms-overflow-style: none; 
-}
-
-#ButtonsView::-webkit-scrollbar { 
-    width: 0; 
-}
-
 
 #hp-action-input,#rp-action-input {
     width:100%;
@@ -98,22 +84,42 @@ img {
 /* xs < 768 */ 
 @media screen and (max-width: 767px) { 
     body,.btn,#myTab,#copyright { font-size: 0.8em; }
-    #ButtonView {
+    #ButtonsView {
+        /*border-top: 1px solid gray;*/
         white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/    
         overflow-x: auto;
         overflow-y: hidden;
+        white-space: normal; /* normal (default) - warp the button   nowrap - overflow and scrolling*/ 
+        display: flex;
+        -webkit-overflow-scrolling: touch; /* if overflow it use touch scrolling for mobile device */
+        /* hide horizontal scrollbar */
+        -ms-overflow-style: none; 
+    }
+    
+    #ButtonsView::-webkit-scrollbar { 
+        width: 0; 
+    }
 
-    } 
 }
 
   /* sm */ 
   @media screen and (min-width: 768px) { 
     body,.btn,#myTab,#copyright { font-size: 0.9em; } 
-    #ButtonView {
-        white-space: nowrap; /* For mobile device, use touch scrolling to view the button panel*/
+    #ButtonsView {
+        /*border-top: 1px solid gray;*/
+        white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/    
         overflow-x: auto;
         overflow-y: hidden;
-    } 
+        white-space: normal; /* normal (default) - warp the button   nowrap - overflow and scrolling*/ 
+        display: flex;
+        -webkit-overflow-scrolling: touch; /* if overflow it use touch scrolling for mobile device */
+        /* hide horizontal scrollbar */
+        -ms-overflow-style: none; 
+    }
+    
+    #ButtonsView::-webkit-scrollbar { 
+        width: 0; 
+    }
   } 
   
   /* md */ 
