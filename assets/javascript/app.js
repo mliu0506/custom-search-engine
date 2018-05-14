@@ -80,7 +80,7 @@ function addhpNewButton(){
           return false; // added so user cannot add a blank button
         }
         console.log(action + " empty button"); 
-        $("#hp-action-input").empty(); //clear the input text
+        $("#hp-action-input").val(""); //clear the input text
         $("#ButtonsView").empty(); //clear the buttons
         cookieCount= getCookie("keycount");
         cookieCount++;
@@ -103,7 +103,7 @@ function addrpNewButton(){
       return false; // added so user cannot add a blank button
     }
     console.log(action + " empty button");
-    $("#rp-action-input").empty(); //clear the input text 
+    $("#rp-action-input").val(""); //clear the input text 
     $("#ButtonsView").empty(); //clear the buttons
     cookieCount= getCookie("keycount");
     cookieCount++;
@@ -295,25 +295,24 @@ displayButtons(); // initial setup for the display button
 addhpNewButton(); // initial setup for the home page search button
 
 //update the selected tab (use data-toggle=tab)
-$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+$('.nav-tabs').on('click', function(e) {
     activeTab = e.target.text;
-    console.log(e.target); // newly activated tab
-    console.log(e.relatedTarget); // previous active tab
+    console.log(e.target.text); // newly activated tab
   });
 
 // if keyword button is selected, it will trigger the API to retrive the data
 $(document).on("click", ".action",function() {
     var action = $(this).attr("data-name");
-    //if (activeTab == "GOOGLE") {
+    if (activeTab == "GOOGLE") {
         displayGoogle(action);
-    //} else if (activeTab == "GIPHY") {
+    } else if (activeTab == "GIPHY") {
         displayGifs(action);
-    //} else if (activeTab == "IMAGES") {
+    } else if (activeTab == "IMAGES") {
         displayImages(action);
-    //}
+    } else if (activeTab == "NEWS") {
         displayNews(action);
-
-    //    console.log("active tab: "+ activeTab);
+    }
+    console.log("active tab: "+ activeTab);
 });
 
 //if double the keyword button, it will remove the selected button and cookie
