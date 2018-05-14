@@ -251,7 +251,7 @@ function displayNews(keyword){
     .done(function(response) {
         console.log(response); // console test to make sure something returns
         $("#news-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
-        var results = response.docs; //shows results of google
+        var results = response.response.docs; //shows results of google
      
         if (results == ""){
             $("#news-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
@@ -312,12 +312,8 @@ $(document).on("click", ".action",function() {
         displayImages(action);
     //}
         displayNews(action);
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            activeTab = e.target.text;
-            console.log(e.target); // newly activated tab
-            console.log(e.relatedTarget); // previous active tab
-          });
-        console.log("active tab: "+ activeTab);
+
+    //    console.log("active tab: "+ activeTab);
 });
 
 //if double the keyword button, it will remove the selected button and cookie
