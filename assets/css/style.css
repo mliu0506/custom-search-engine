@@ -63,8 +63,15 @@ img {
     padding-bottom: 10px;
 }
 
+#google-content,#news-content {
+    color: blue;
+    font-weight: 500;
+}
+
+
 .smallFont{
     font-size: 0.8em;
+    color:green;
 }
 
 #footer {
