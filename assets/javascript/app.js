@@ -308,10 +308,16 @@ $(document).on("click", ".action",function() {
         displayGoogle(action);
     //} else if (activeTab == "GIPHY") {
         displayGifs(action);
-    //} else if (activeTab == "IMAGE") {
+    //} else if (activeTab == "IMAGES") {
         displayImages(action);
     //}
-    console.log("active tab: "+ activeTab);
+        displayNews(action);
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            activeTab = e.target.text;
+            console.log(e.target); // newly activated tab
+            console.log(e.relatedTarget); // previous active tab
+          });
+        console.log("active tab: "+ activeTab);
 });
 
 //if double the keyword button, it will remove the selected button and cookie
