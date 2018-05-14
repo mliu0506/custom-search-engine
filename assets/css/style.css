@@ -84,6 +84,11 @@ img {
 /* xs < 768 */ 
 @media screen and (max-width: 767px) { 
     body,.btn,#myTab,#copyright { font-size: 0.8em; }
+    /* Result page header */
+    .jumbotron {
+    padding: bottom 0;
+    margin-bottom: 0px;
+    }
     #ButtonsView {
         /*border-top: 1px solid gray;*/
         white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/    
