@@ -32,8 +32,7 @@ img {
 
 #ButtonsView {
     /*border-top: 1px solid gray;*/
-    overflow-x: auto;
-    overflow-y: hidden;
+
     white-space: normal; /* normal (default) - warp the button   nowrap - overflow and scrolling*/ 
     display: flex;
     -webkit-overflow-scrolling: touch; /* if overflow it use touch scrolling for mobile device */
@@ -100,7 +99,10 @@ img {
 @media screen and (max-width: 767px) { 
     body,.btn,#myTab,#copyright { font-size: 0.8em; }
     #ButtonView {
-        white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/
+        white-space: nowrap;  /* For mobile device, use touch scrolling to view the button panel*/    
+        overflow-x: auto;
+        overflow-y: hidden;
+
     } 
 }
 
@@ -109,6 +111,8 @@ img {
     body,.btn,#myTab,#copyright { font-size: 0.9em; } 
     #ButtonView {
         white-space: nowrap; /* For mobile device, use touch scrolling to view the button panel*/
+        overflow-x: auto;
+        overflow-y: hidden;
     } 
   } 
   
