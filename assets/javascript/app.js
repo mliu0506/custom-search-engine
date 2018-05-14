@@ -219,10 +219,11 @@ function displayImages(keyword){
             $("#image-content").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
             $("#image-content").append("<BR> There isn't a record for this selected button!");
         }
-        for (var i=1; i<=results.length; i++){
+        for (var i=0; i<results.length; i++){
             var imageDiv = $("<div>"); //div for the images to go inside
             imageDiv.addClass("imageDiv");
-            var imageNum = $("<p>").text("Number: " + i);
+            var imageCount = i + 1;
+            var imageNum = $("<p>").text("Number: " + imageCount);
             imageDiv.append(imageNum);
             var image = $("<img>");
             image.attr("src", results[i].link); // image stored into src of image
